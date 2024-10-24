@@ -1,7 +1,11 @@
 #include "NN/MultiJetBaseline.h" //include of the top level of HLS model
 #include "emulator.h" //include of emulator modeling
+#include "NN/nnet_utils/nnet_common.h"
 #include <any>
+#include <array>
+#include <utility>
 #include "ap_fixed.h"
+#include "ap_int.h"
 
 using namespace MultiJetTagger_v1;
 
