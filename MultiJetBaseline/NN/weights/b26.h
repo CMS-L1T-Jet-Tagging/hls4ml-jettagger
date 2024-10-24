@@ -6,6 +6,7 @@
 #ifndef B26_H_
 #define B26_H_
 
+namespace MultiJetTagger_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 qdense_phi_1_bias_t b26[32];
 #else
@@ -13,3 +14,4 @@ qdense_phi_1_bias_t b26[32] = {0.468750, -0.656250, 1.062500, 1.468750, -3.15625
 #endif
 
 #endif
+}

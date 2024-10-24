@@ -7,6 +7,8 @@
 #include <cstddef>
 #include <cstdio>
 
+namespace MultiJetTagger_v1 {
+
 // hls-fpga-machine-learning insert numbers
 #define N_INPUT_1_1 16
 #define N_INPUT_2_1 21
@@ -84,3 +86,4 @@ typedef ap_fixed<18,8,AP_RND,AP_SAT,0> output_class_exp_table_t;
 typedef ap_fixed<18,8,AP_RND,AP_SAT,0> output_class_inv_table_t;
 
 #endif
+}

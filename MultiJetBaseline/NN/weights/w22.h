@@ -6,6 +6,7 @@
 #ifndef W22_H_
 #define W22_H_
 
+namespace MultiJetTagger_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 weight22_t w22[32];
 #else
@@ -13,3 +14,4 @@ weight22_t w22[32] = {0.335937500, -0.123046875, -0.134765625, -0.306640625, 0.4
 #endif
 
 #endif
+}

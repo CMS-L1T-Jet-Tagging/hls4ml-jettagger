@@ -6,6 +6,7 @@
 #ifndef S2_H_
 #define S2_H_
 
+namespace MultiJetTagger_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 batchnorm_inputs_scale_t s2[21];
 #else
@@ -13,3 +14,4 @@ batchnorm_inputs_scale_t s2[21] = {4.6998414993, 10.8545274734, 9.7728824615, 0.
 #endif
 
 #endif
+}

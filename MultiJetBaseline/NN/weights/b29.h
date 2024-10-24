@@ -6,6 +6,7 @@
 #ifndef B29_H_
 #define B29_H_
 
+namespace MultiJetTagger_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 qdense_phi_2_bias_t b29[32];
 #else
@@ -14,3 +15,4 @@ qdense_phi_2_bias_t b29[32] = {-0.006797, -1.389488, -0.000000, -0.483226, -0.16
 #endif
 
 #endif
+}

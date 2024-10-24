@@ -6,6 +6,7 @@
 #ifndef W26_H_
 #define W26_H_
 
+namespace MultiJetTagger_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 qdense_phi_1_weight_t w26[672];
 #else
@@ -13,3 +14,4 @@ qdense_phi_1_weight_t w26[672] = {0.765625, -0.593750, 0.125000, -0.234375, 0.00
 #endif
 
 #endif
+}

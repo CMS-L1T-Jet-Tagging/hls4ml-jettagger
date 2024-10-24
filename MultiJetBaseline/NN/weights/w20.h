@@ -6,6 +6,7 @@
 #ifndef W20_H_
 #define W20_H_
 
+namespace MultiJetTagger_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 weight20_t w20[256];
 #else
@@ -13,3 +14,4 @@ weight20_t w20[256] = {0.482421875, 0.080078125, -0.164062500, 0.113281250, -0.0
 #endif
 
 #endif
+}

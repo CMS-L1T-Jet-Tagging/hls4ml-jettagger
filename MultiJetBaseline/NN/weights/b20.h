@@ -6,6 +6,7 @@
 #ifndef B20_H_
 #define B20_H_
 
+namespace MultiJetTagger_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias20_t b20[8];
 #else
@@ -13,3 +14,4 @@ bias20_t b20[8] = {0.687500000, -1.130859375, 0.681640625, 0.914062500, -0.44726
 #endif
 
 #endif
+}

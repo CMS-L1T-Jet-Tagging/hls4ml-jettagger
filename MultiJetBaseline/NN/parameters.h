@@ -37,6 +37,7 @@
 #include "weights/w22.h"
 #include "weights/b22.h"
 
+namespace MultiJetTagger_v1 {
 // hls-fpga-machine-learning insert layer-config
 // batchnorm_inputs
 struct config2 : nnet::batchnorm_config {
@@ -319,5 +320,7 @@ struct softmax_config24 : nnet::activ_config {
     typedef output_class_inv_table_t inv_table_t;
 };
 
+
+}
 
 #endif

@@ -6,6 +6,7 @@
 #ifndef W16_H_
 #define W16_H_
 
+namespace MultiJetTagger_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 weight16_t w16[1024];
 #else
@@ -13,3 +14,4 @@ weight16_t w16[1024] = {0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.0000
 #endif
 
 #endif
+}

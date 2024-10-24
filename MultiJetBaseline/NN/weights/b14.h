@@ -6,6 +6,7 @@
 #ifndef B14_H_
 #define B14_H_
 
+namespace MultiJetTagger_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias14_t b14[32];
 #else
@@ -13,3 +14,4 @@ bias14_t b14[32] = {0.000000, -0.484375, 0.140625, 0.312500, 1.015625, 0.000000,
 #endif
 
 #endif
+}

@@ -6,6 +6,7 @@
 #ifndef B2_H_
 #define B2_H_
 
+namespace MultiJetTagger_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 batchnorm_inputs_bias_t b2[21];
 #else
@@ -13,3 +14,4 @@ batchnorm_inputs_bias_t b2[21] = {-0.2858749926, -0.0316109955, -0.0034415235, -
 #endif
 
 #endif
+}
