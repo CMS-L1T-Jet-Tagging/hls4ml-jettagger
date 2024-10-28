@@ -51,12 +51,6 @@ void MultiJetBaseline(
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
     nnet::save_layer_output<layer2_t>(layer2_out, "batchnorm_inputs", N_INPUT_1_1*N_INPUT_2_1);
 #endif
-    std::cout << "batchnorm_inputs" << std::endl; 
-    for (int i = 0; i < N_INPUT_1_1*N_INPUT_2_1; ++i ){
-        std::cout << layer2_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
 
     layer26_t layer26_out[N_OUTPUTS_26*N_FILT_26];
     #pragma HLS ARRAY_PARTITION variable=layer26_out complete dim=0
@@ -65,26 +59,12 @@ void MultiJetBaseline(
     nnet::save_layer_output<layer26_t>(layer26_out, "qDense_phi_1", N_OUTPUTS_26*N_FILT_26);
 #endif
 
-    std::cout << "qDense_phi_1" << std::endl; 
-    for (int i = 0; i < N_OUTPUTS_26*N_FILT_26; ++i ){
-        std::cout << layer26_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
-
     layer5_t layer5_out[N_LAYER_1_3*N_LAYER_2_3];
     #pragma HLS ARRAY_PARTITION variable=layer5_out complete dim=0
     nnet::relu<layer26_t, layer5_t, relu_config5>(layer26_out, layer5_out); // qActivation_phi_1
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
     nnet::save_layer_output<layer5_t>(layer5_out, "qActivation_phi_1", N_LAYER_1_3*N_LAYER_2_3);
 #endif
-
-    std::cout << "qActivation_phi_1" << std::endl; 
-    for (int i = 0; i < N_LAYER_1_3*N_LAYER_2_3; ++i ){
-        std::cout << layer5_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
 
     layer27_t layer27_out[N_OUTPUTS_27*N_FILT_27];
     #pragma HLS ARRAY_PARTITION variable=layer27_out complete dim=0
@@ -93,28 +73,12 @@ void MultiJetBaseline(
     nnet::save_layer_output<layer27_t>(layer27_out, "qDense_phi_2", N_OUTPUTS_27*N_FILT_27);
 #endif
 
-
-    std::cout << "qDense_phi_2" << std::endl; 
-    for (int i = 0; i < N_OUTPUTS_27*N_FILT_27; ++i ){
-        std::cout << layer27_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
-
-
     layer8_t layer8_out[N_LAYER_1_6*N_LAYER_2_6];
     #pragma HLS ARRAY_PARTITION variable=layer8_out complete dim=0
     nnet::relu<layer27_t, layer8_t, relu_config8>(layer27_out, layer8_out); // qActivation_phi_2
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
     nnet::save_layer_output<layer8_t>(layer8_out, "qActivation_phi_2", N_LAYER_1_6*N_LAYER_2_6);
 #endif
-
-    std::cout << "qActivation_phi_2" << std::endl; 
-    for (int i = 0; i < N_LAYER_1_6*N_LAYER_2_6; ++i ){
-        std::cout << layer8_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
 
     layer9_t layer9_out[N_LAYER_1_6*N_LAYER_2_6];
     #pragma HLS ARRAY_PARTITION variable=layer9_out complete dim=0
@@ -123,26 +87,12 @@ void MultiJetBaseline(
     nnet::save_layer_output<layer9_t>(layer9_out, "qActivationForPool", N_LAYER_1_6*N_LAYER_2_6);
 #endif
 
-    std::cout << "qActivationForPool" << std::endl; 
-    for (int i = 0; i < N_LAYER_1_6*N_LAYER_2_6; ++i ){
-        std::cout << layer9_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
-
     layer10_t layer10_out[N_FILT_10];
     #pragma HLS ARRAY_PARTITION variable=layer10_out complete dim=0
     nnet::global_pooling1d_cl<layer9_t, layer10_t, config10>(layer9_out, layer10_out); // avgpool
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
     nnet::save_layer_output<layer10_t>(layer10_out, "avgpool", N_FILT_10);
 #endif
-
-    std::cout << "avgpool" << std::endl; 
-    for (int i = 0; i < N_FILT_10; ++i ){
-        std::cout << layer10_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
 
     layer11_t layer11_out[N_LAYER_11];
     #pragma HLS ARRAY_PARTITION variable=layer11_out complete dim=0
@@ -151,26 +101,12 @@ void MultiJetBaseline(
     nnet::save_layer_output<layer11_t>(layer11_out, "qDense_rho_1", N_LAYER_11);
 #endif
 
-    std::cout << "qDense_rho_1" << std::endl; 
-    for (int i = 0; i < N_LAYER_11; ++i ){
-        std::cout << layer11_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
-
     layer13_t layer13_out[N_LAYER_11];
     #pragma HLS ARRAY_PARTITION variable=layer13_out complete dim=0
     nnet::relu<layer11_t, layer13_t, relu_config13>(layer11_out, layer13_out); // qActivation_rho_1
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
     nnet::save_layer_output<layer13_t>(layer13_out, "qActivation_rho_1", N_LAYER_11);
 #endif
-
-    std::cout << "qActivation_rho_1" << std::endl; 
-    for (int i = 0; i < N_LAYER_11; ++i ){
-        std::cout << layer13_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
 
     layer14_t layer14_out[N_LAYER_14];
     #pragma HLS ARRAY_PARTITION variable=layer14_out complete dim=0
@@ -179,26 +115,12 @@ void MultiJetBaseline(
     nnet::save_layer_output<layer14_t>(layer14_out, "qDense_2_class", N_LAYER_14);
 #endif
 
-    std::cout << "qDense_2_class" << std::endl; 
-    for (int i = 0; i < N_LAYER_14; ++i ){
-        std::cout << layer14_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
-
     layer16_t layer16_out[N_LAYER_16];
     #pragma HLS ARRAY_PARTITION variable=layer16_out complete dim=0
     nnet::dense<layer13_t, layer16_t, config16>(layer13_out, layer16_out, w16, b16); // qDense_2_reg
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
     nnet::save_layer_output<layer16_t>(layer16_out, "qDense_2_reg", N_LAYER_16);
 #endif
-
-    std::cout << "qDense_2_reg" << std::endl; 
-    for (int i = 0; i < N_LAYER_16; ++i ){
-        std::cout << layer16_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
 
     layer18_t layer18_out[N_LAYER_14];
     #pragma HLS ARRAY_PARTITION variable=layer18_out complete dim=0
@@ -207,26 +129,12 @@ void MultiJetBaseline(
     nnet::save_layer_output<layer18_t>(layer18_out, "qActivation_2_class", N_LAYER_14);
 #endif
 
-    std::cout << "qActivation_2_class" << std::endl; 
-    for (int i = 0; i < N_LAYER_14; ++i ){
-        std::cout << layer18_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
-
     layer19_t layer19_out[N_LAYER_16];
     #pragma HLS ARRAY_PARTITION variable=layer19_out complete dim=0
     nnet::relu<layer16_t, layer19_t, relu_config19>(layer16_out, layer19_out); // qActivation_2_reg
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
     nnet::save_layer_output<layer19_t>(layer19_out, "qActivation_2_reg", N_LAYER_16);
 #endif
-
-    std::cout << "qActivation_2_reg" << std::endl; 
-    for (int i = 0; i < N_LAYER_16; ++i ){
-        std::cout << layer19_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
 
     layer20_t layer20_out[N_LAYER_20];
     #pragma HLS ARRAY_PARTITION variable=layer20_out complete dim=0
@@ -235,36 +143,15 @@ void MultiJetBaseline(
     nnet::save_layer_output<layer20_t>(layer20_out, "qDense_out_class", N_LAYER_20);
 #endif
 
-    std::cout << "qDense_out_class" << std::endl; 
-    for (int i = 0; i < N_LAYER_20; ++i ){
-        std::cout << layer20_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
-
     nnet::dense<layer19_t, layer22_t, config22>(layer19_out, layer22_out, w22, b22); // qDense_out_reg
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
     nnet::save_layer_output<layer22_t>(layer22_out, "qDense_out_reg", N_LAYER_22);
 #endif
 
-    std::cout << "qDense_out_reg" << std::endl; 
-    for (int i = 0; i < N_LAYER_22; ++i ){
-        std::cout << layer22_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
-
     nnet::softmax<layer20_t, layer24_t, softmax_config24>(layer20_out, layer24_out); // output_class
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
     nnet::save_layer_output<layer24_t>(layer24_out, "output_class", N_LAYER_20);
 #endif
-
-    std::cout << "output_class" << std::endl; 
-    for (int i = 0; i < N_LAYER_20; ++i ){
-        std::cout << layer24_out[i] << " , ";
-    }
-    std::cout << std::endl; 
-    std::cout << "=======" << std::endl; 
 
 }
 }
