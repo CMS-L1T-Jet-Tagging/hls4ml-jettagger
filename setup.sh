@@ -5,11 +5,11 @@ cp -r $SRC/defines.h   MultiJetBaseline/NN/
 sed -i "s/#include <cstdio>/#include <cstdio>\n\nnamespace MultiJetTagger_v1 {/" MultiJetBaseline/NN/defines.h
 echo '}' >> MultiJetBaseline/NN/defines.h
 
-cp    $SRC/MultiJetBaseline.cpp   MultiJetBaseline/NN/MultiJetBaseline.cpp
+cp    $SRC/myproject.cpp   MultiJetBaseline/NN/MultiJetBaseline.cpp
 sed -i "s/void myproject(/namespace MultiJetTagger_v1 {\nvoid myproject(/" MultiJetBaseline/NN/MultiJetBaseline.cpp
 echo '}' >> MultiJetBaseline/NN/MultiJetBaseline.cpp
 
-cp    $SRC/MultiJetBaseline.h   MultiJetBaseline/NN/MultiJetBaseline.h
+cp    $SRC/myproject.h   MultiJetBaseline/NN/MultiJetBaseline.h
 sed -i "s/void myproject(/namespace MultiJetTagger_v1 {\nvoid myproject(/" MultiJetBaseline/NN/MultiJetBaseline.h
 sed -i "s/#endif/}\n\n#endif/" MultiJetBaseline/NN/MultiJetBaseline.h
 
