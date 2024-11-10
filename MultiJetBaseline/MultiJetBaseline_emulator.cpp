@@ -32,7 +32,7 @@ class MultiJetBaseline_emulator : public hls4mlEmulator::Model{
 
         virtual void predict()
         {
-            MultiJetBaseline(_input, _layer22_out, _layer25_out);
+            MultiJetBaseline(_input, _layer25_out, _layer24_out);
             //for (int i = 0; i < N_LAYER_20; ++i ){
                 //std::cout << _layer24_out[i] << " | ";
             //}
