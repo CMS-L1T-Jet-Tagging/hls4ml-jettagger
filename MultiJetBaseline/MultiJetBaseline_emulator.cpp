@@ -42,10 +42,10 @@ class MultiJetBaseline_emulator : public hls4mlEmulator::Model{
 
         virtual void read_result(std::any result)
         { 
-            std::pair<std::array<layer25_t,N_LAYER_22>,std::array<layer24_t,N_LAYER_20>> *result_p = std::any_cast<std::pair<std::array<layer22_t,N_LAYER_22>,std::array<layer24_t,N_LAYER_20>>*>(result);
+            std::pair<std::array<layer25_t,N_LAYER_22>,std::array<layer24_t,N_LAYER_20>> *result_p = std::any_cast<std::pair<std::array<layer25_t,N_LAYER_22>,std::array<layer24_t,N_LAYER_20>>*>(result);
             //std::cout << "OUTPUTS REG: ";
             for (int i = 0; i < N_LAYER_22; ++i ){
-                result_p->first[i] = _layer22_out[i];  
+                result_p->first[i] = _layer25_out[i];  
                 //std::cout <<  _layer22_out[i] << ", ";
             }
             //std::cout << std::endl;
