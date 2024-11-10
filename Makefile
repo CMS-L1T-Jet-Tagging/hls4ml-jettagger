@@ -1,5 +1,5 @@
 CPP_STANDARD := c++17
-CXXFLAGS := -O3 -fPIC -std=$(CPP_STANDARD)
+CXXFLAGS := -O3 -fPIC -std=$(CPP_STANDARD) -fpermissive
 PREFIX:=.
 EMULATOR_EXTRAS := ../../hls4mlEmulatorExtras
 AP_TYPES := $(EMULATOR_EXTRAS)/include/ap_types
