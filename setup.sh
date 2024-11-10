@@ -13,7 +13,7 @@ cp    $SRC/myproject.h   MultiJetBaseline/NN/MultiJetBaseline.h
 sed -i "s/void myproject(/namespace MultiJetTagger_v1 {\nvoid myproject(/" MultiJetBaseline/NN/MultiJetBaseline.h
 sed -i "s/#endif/}\n\n#endif/" MultiJetBaseline/NN/MultiJetBaseline.h
 
-cp -r $SRC/nnet_utils   MultiJetBaseline/NN/
+#cp -r $SRC/nnet_utils   MultiJetBaseline/NN/
 
 cp    $SRC/parameters.h   MultiJetBaseline/NN/
 sed -i "s,// hls-fpga-machine-learning insert layer-config,namespace MultiJetTagger_v1 {\n// hls-fpga-machine-learning insert layer-config," MultiJetBaseline/NN/parameters.h
