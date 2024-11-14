@@ -11,7 +11,7 @@
 namespace MultiJetTagger_v1 {
 void MultiJetBaseline(
     input_t inputs[N_INPUT_1_1*N_INPUT_2_1],
-    layer22_t layer22_out[N_LAYER_22], layer24_t layer24_out[N_LAYER_20]
+    layer24_t layer24_out[N_LAYER_20], layer25_t layer25_out[N_LAYER_22]
 );
 
 }
