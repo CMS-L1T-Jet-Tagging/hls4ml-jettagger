@@ -29,7 +29,7 @@ class JetTaggerNN_emulator : public hls4mlEmulator::Model{
 
         virtual void predict()
         {
-            JetTaggerNN(_input, _layer24_out, _layer25_out);
+            JetTaggerNN(_input, _layer24_out, _layer22_out);
             
         }
 
