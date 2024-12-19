@@ -4,6 +4,7 @@
 #include "parameters.h"
 
 
+namespace JetTaggerNN_v1 {
 void JetTaggerNN(
     input_t model_input[N_INPUT_1_1*N_INPUT_2_1],
     layer22_t layer22_out[N_LAYER_19], layer24_t layer24_out[N_LAYER_23]
@@ -17,15 +18,15 @@ void JetTaggerNN(
     #pragma HLS DATAFLOW
 
     // hls-fpga-machine-learning insert load weights
-#ifndef __SYNTHESIS__
+#ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
     static bool loaded_weights = false;
     if (!loaded_weights) {
-        nnet::load_weights_from_txt<norm_input_default_t, 16>(s2, "s2.txt");
-        nnet::load_weights_from_txt<norm_input_default_t, 16>(b2, "b2.txt");
-        nnet::load_weights_from_txt<weight25_t, 160>(w25, "w25.txt");
+        nnet::load_weights_from_txt<norm_input_default_t, 20>(s2, "s2.txt");
+        nnet::load_weights_from_txt<norm_input_default_t, 20>(b2, "b2.txt");
+        nnet::load_weights_from_txt<weight25_t, 200>(w25, "w25.txt");
         nnet::load_weights_from_txt<bias25_t, 10>(b25, "b25.txt");
-        nnet::load_weights_from_txt<weight6_t, 200>(w6, "w6.txt");
-        nnet::load_weights_from_txt<bias6_t, 10>(b6, "b6.txt");
+        nnet::load_weights_from_txt<weight26_t, 100>(w26, "w26.txt");
+        nnet::load_weights_from_txt<bias26_t, 10>(b26, "b26.txt");
         nnet::load_weights_from_txt<weight11_t, 320>(w11, "w11.txt");
         nnet::load_weights_from_txt<bias11_t, 32>(b11, "b11.txt");
         nnet::load_weights_from_txt<weight14_t, 512>(w14, "w14.txt");
@@ -56,13 +57,13 @@ void JetTaggerNN(
     #pragma HLS ARRAY_PARTITION variable=layer5_out complete dim=0
     nnet::relu<Conv1D_1_result_t, layer5_t, relu_config5>(layer25_out, layer5_out); // relu_1
 
-    Conv1D_2_result_t layer6_out[N_OUTPUTS_6*N_FILT_6];
-    #pragma HLS ARRAY_PARTITION variable=layer6_out complete dim=0
-    nnet::conv_1d_cl<layer5_t, Conv1D_2_result_t, config6>(layer5_out, layer6_out, w6, b6); // Conv1D_2
+    Conv1D_2_result_t layer26_out[N_OUTPUTS_26*N_FILT_26];
+    #pragma HLS ARRAY_PARTITION variable=layer26_out complete dim=0
+    nnet::pointwise_conv_1d_cl<layer5_t, Conv1D_2_result_t, config26>(layer5_out, layer26_out, w26, b26); // Conv1D_2
 
     layer8_t layer8_out[N_OUTPUTS_6*N_FILT_6];
     #pragma HLS ARRAY_PARTITION variable=layer8_out complete dim=0
-    nnet::relu<Conv1D_2_result_t, layer8_t, relu_config8>(layer6_out, layer8_out); // relu_2
+    nnet::relu<Conv1D_2_result_t, layer8_t, relu_config8>(layer26_out, layer8_out); // relu_2
 
     layer9_t layer9_out[N_OUTPUTS_6*N_FILT_6];
     #pragma HLS ARRAY_PARTITION variable=layer9_out complete dim=0
@@ -110,3 +111,4 @@ void JetTaggerNN(
 
 }
 
+}
