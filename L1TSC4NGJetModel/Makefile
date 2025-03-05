@@ -1,6 +1,6 @@
 .PHONY: clean
 
-JetTaggerNN.so: JetTaggerNN_emulator.o JetTaggerNN.o
+L1TSC4NGJetModel.so: L1TSC4NGJetModel_emulator.o L1TSC4NGJetModel.o
 	$(CXX) $(CXXFLAGS) $(LD_FLAGS) -shared $^ -o $@
 
 %.o: NN/%.cpp
@@ -10,4 +10,4 @@ JetTaggerNN.so: JetTaggerNN_emulator.o JetTaggerNN.o
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm JetTaggerNN_emulator.o JetTaggerNN.o JetTaggerNN.so
+	rm L1TSC4NGJetModel_emulator.o L1TSC4NGJetModel.o L1TSC4NGJetModel.so

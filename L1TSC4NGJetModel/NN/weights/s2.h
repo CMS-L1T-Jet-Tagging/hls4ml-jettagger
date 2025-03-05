@@ -6,7 +6,7 @@
 #ifndef S2_H_
 #define S2_H_
 
-namespace JetTaggerNN_v1 {
+namespace L1TSC4NGJetModel_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 norm_input_default_t s2[20];
 #else

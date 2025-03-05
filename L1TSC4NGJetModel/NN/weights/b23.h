@@ -6,7 +6,7 @@
 #ifndef B23_H_
 #define B23_H_
 
-namespace JetTaggerNN_v1 {
+namespace L1TSC4NGJetModel_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias23_t b23[1];
 #else

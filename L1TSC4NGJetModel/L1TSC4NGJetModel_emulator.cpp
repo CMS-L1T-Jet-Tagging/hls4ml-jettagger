@@ -1,4 +1,4 @@
-#include "NN/JetTaggerNN.h" //include of the top level of HLS model
+#include "NN/L1TSC4NGJetModel.h" //include of the top level of HLS model
 #include "emulator.h" //include of emulator modeling
 #include "NN/nnet_utils/nnet_common.h"
 #include <any>
@@ -7,9 +7,9 @@
 #include "ap_fixed.h"
 #include "ap_int.h"
 
-using namespace JetTaggerNN_v1;
+using namespace L1TSC4NGJetModel_v1;
 
-class JetTaggerNN_emulator : public hls4mlEmulator::Model{
+class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
     private:
         input_t _input[N_INPUT_1_1*N_INPUT_2_1];
         layer24_t _layer24_out[N_LAYER_23]; // reg out
@@ -29,7 +29,7 @@ class JetTaggerNN_emulator : public hls4mlEmulator::Model{
 
         virtual void predict()
         {
-            JetTaggerNN(_input, _layer22_out, _layer24_out);
+            L1TSC4NGJetModel(_input, _layer22_out, _layer24_out);
             
         }
 
@@ -48,7 +48,7 @@ class JetTaggerNN_emulator : public hls4mlEmulator::Model{
 
 extern "C" hls4mlEmulator::Model* create_model()
 {
-    return new JetTaggerNN_emulator;
+    return new L1TSC4NGJetModel_emulator;
 }
 
 extern "C" void destroy_model(hls4mlEmulator::Model* m)

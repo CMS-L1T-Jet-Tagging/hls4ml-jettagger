@@ -38,7 +38,7 @@
 #include "weights/b23.h"
 
 
-namespace JetTaggerNN_v1 {
+namespace L1TSC4NGJetModel_v1 {
 // hls-fpga-machine-learning insert layer-config
 // norm_input
 struct config2 : nnet::batchnorm_config {

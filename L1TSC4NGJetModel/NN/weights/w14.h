@@ -6,7 +6,7 @@
 #ifndef W14_H_
 #define W14_H_
 
-namespace JetTaggerNN_v1 {
+namespace L1TSC4NGJetModel_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 weight14_t w14[512];
 #else

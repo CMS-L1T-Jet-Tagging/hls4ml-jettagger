@@ -6,7 +6,7 @@
 #ifndef B26_H_
 #define B26_H_
 
-namespace JetTaggerNN_v1 {
+namespace L1TSC4NGJetModel_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias26_t b26[10];
 #else

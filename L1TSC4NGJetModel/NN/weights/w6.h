@@ -6,8 +6,8 @@
 #ifndef W6_H_
 #define W6_H_
 
-namespace JetTaggerNN_v1 {
-namespace JetTaggerNN_v1 {
+namespace L1TSC4NGJetModel_v1 {
+namespace L1TSC4NGJetModel_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 weight6_t w6[200];
 #else

@@ -7,7 +7,7 @@
 #include <cstddef>
 #include <cstdio>
 
-namespace JetTaggerNN_v1 {
+namespace L1TSC4NGJetModel_v1 {
 
 // hls-fpga-machine-learning insert numbers
 #define N_INPUT_1_1 16

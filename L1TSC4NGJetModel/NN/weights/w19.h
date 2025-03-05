@@ -6,7 +6,7 @@
 #ifndef W19_H_
 #define W19_H_
 
-namespace JetTaggerNN_v1 {
+namespace L1TSC4NGJetModel_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 weight19_t w19[128];
 #else
