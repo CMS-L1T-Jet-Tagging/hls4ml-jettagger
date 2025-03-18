@@ -8,7 +8,7 @@ Setup CMSSW directory and cd src
 git clone https://github.com/CMS-L1T-Jet-Tagging/hls4ml-jettagger.git
 ```
 ```
-cd hls4ml-jettagger
+cd HGQ
 ```
 ```
 make install

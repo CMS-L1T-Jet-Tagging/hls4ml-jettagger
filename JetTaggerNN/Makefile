@@ -1,6 +1,6 @@
 .PHONY: clean
 
-MultiJetBaseline.so: MultiJetBaseline_emulator.o MultiJetBaseline.o
+JetTaggerNN.so: JetTaggerNN_emulator.o JetTaggerNN.o
 	$(CXX) $(CXXFLAGS) $(LD_FLAGS) -shared $^ -o $@
 
 %.o: NN/%.cpp
@@ -10,4 +10,4 @@ MultiJetBaseline.so: MultiJetBaseline_emulator.o MultiJetBaseline.o
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm MultiJetBaseline_emulator.o MultiJetBaseline.o MultiJetBaseline.so
+	rm JetTaggerNN_emulator.o JetTaggerNN.o JetTaggerNN.so
