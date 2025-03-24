@@ -12,8 +12,8 @@ using namespace JetTaggerNN_v1;
 class JetTaggerNN_emulator : public hls4mlEmulator::Model{
     private:
         input_t _input[N_INPUT_1_1*N_INPUT_2_1];
-        pT_output_result_t layer33_out[N_LAYER_33]; // reg out
-        layer35_t layer35_out[N_LAYER_29]; // class out
+        pT_output_result_t _layer33_out[N_LAYER_33]; // reg out
+        layer35_t _layer35_out[N_LAYER_29]; // class out
     public:
 
 
