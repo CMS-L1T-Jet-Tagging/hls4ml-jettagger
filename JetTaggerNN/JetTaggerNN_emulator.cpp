@@ -7,13 +7,13 @@
 #include "ap_fixed.h"
 #include "ap_int.h"
 
-using namespace JetTaggerNN_v1;
+using namespace nnet;
 
 class JetTaggerNN_emulator : public hls4mlEmulator::Model{
     private:
-        input_t _input[N_INPUT_1_1*N_INPUT_2_1];
-        pT_output_result_t _layer33_out[N_LAYER_33]; // reg out
-        layer35_t _layer35_out[N_LAYER_29]; // class out
+        input_t input_1[N_INPUT_1_1*N_INPUT_2_1];
+        pT_output_result_t layer33_out[N_LAYER_33]; // reg out
+        layer35_t layer35_out[N_LAYER_29]; // class out
     public:
 
 
@@ -21,7 +21,7 @@ class JetTaggerNN_emulator : public hls4mlEmulator::Model{
         {
             input_t* input_p = std::any_cast<input_t*>(input);
             for(int i = 0; i < N_INPUT_1_1*N_INPUT_2_1; ++i){
-                _input[i] = std::any_cast<input_t>(input_p[i]);
+                input_1[i] = std::any_cast<input_t>(input_p[i]);
             }
         }
 
@@ -29,19 +29,19 @@ class JetTaggerNN_emulator : public hls4mlEmulator::Model{
 
         virtual void predict()
         {
-            JetTaggerNN(_input, _layer35_out,_layer33_out);
+            JetTaggerNN(input_1, layer33_out,layer35_out);
             
         }
 
         virtual void read_result(std::any result)
         { 
-            std::pair<std::array<pT_output_result_t,N_LAYER_33>,std::array<layer_35_t,N_LAYER_29>> *result_p = std::any_cast<std::pair<std::array<pT_output_result_t,N_LAYER_33>,std::array<layer35_t,N_LAYER_29>>*>(result);
+            std::pair<std::array<pT_output_result_t,N_LAYER_33>,std::array<layer35_t,N_LAYER_29>> *result_p = std::any_cast<std::pair<std::array<pT_output_result_t,N_LAYER_33>,std::array<layer35_t,N_LAYER_29>>*>(result);
             
             for (int i = 0; i < N_LAYER_33; ++i ){
-                result_p->second[i] = _layer33_out[i];
+                result_p->second[i] = layer33_out[i];
             }
             for (int i = 0; i < N_LAYER_29; ++i ){
-                result_p->first[i] = _layer35_out[i];  
+                result_p->first[i] = layer35_out[i];  
             }
         }
 
