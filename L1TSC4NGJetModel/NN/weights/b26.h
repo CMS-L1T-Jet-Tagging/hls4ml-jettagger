@@ -6,7 +6,8 @@
 #ifndef B26_H_
 #define B26_H_
 
-#ifndef __SYNTHESIS__
+namespace L1TSC4NGJetModel_v1 {
+#ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias26_t b26[10];
 #else
 bias26_t b26[10] = {0.296875, -0.406250, 0.031250, 0.125000, -0.078125, -0.062500, 0.234375, 0.203125, -0.437500, -0.250000};
@@ -14,3 +15,4 @@ bias26_t b26[10] = {0.296875, -0.406250, 0.031250, 0.125000, -0.078125, -0.06250
 #endif
 
 #endif
+}

@@ -8,6 +8,7 @@
 
 namespace L1TSC4NGJetModel_v1 {
 namespace L1TSC4NGJetModel_v1 {
+namespace L1TSC4NGJetModel_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias6_t b6[10];
 #else
@@ -16,5 +17,6 @@ bias6_t b6[10] = {0.062500, -0.015625, 0.093750, 0.046875, -0.046875, -0.203125,
 #endif
 
 #endif
+}
 }
 }

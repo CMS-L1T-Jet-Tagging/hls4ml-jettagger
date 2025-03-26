@@ -1,5 +1,5 @@
-#ifndef L1TSC4NGJetModel_H_
-#define L1TSC4NGJetModel_H_
+#ifndef L1TSC4NGJETMODEL_H_
+#define L1TSC4NGJETMODEL_H_
 
 #include "ap_fixed.h"
 #include "ap_int.h"

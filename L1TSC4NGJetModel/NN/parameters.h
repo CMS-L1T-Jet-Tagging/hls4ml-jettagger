@@ -61,7 +61,7 @@ struct config25_mult : nnet::dense_config {
     static const unsigned n_out = 10;
     static const unsigned reuse_factor = 1;
     static const unsigned strategy = nnet::latency;
-    static const unsigned n_zeros = 23;
+    static const unsigned n_zeros = 25;
     static const unsigned multiplier_limit = DIV_ROUNDUP(n_in * n_out, reuse_factor) - n_zeros / reuse_factor;
     typedef model_default_t accum_t;
     typedef bias25_t bias_t;
@@ -84,7 +84,7 @@ struct config25 : nnet::conv1d_config {
     static const unsigned dilation = 1;
     static const unsigned out_width = 16;
     static const unsigned reuse_factor = 1;
-    static const unsigned n_zeros = 23;
+    static const unsigned n_zeros = 25;
     static const unsigned multiplier_limit =
         DIV_ROUNDUP(kernel_size * n_chan * n_filt, reuse_factor) - n_zeros / reuse_factor;
     static const bool store_weights_in_bram = false;
@@ -120,7 +120,7 @@ struct config26_mult : nnet::dense_config {
     static const unsigned n_out = 10;
     static const unsigned reuse_factor = 1;
     static const unsigned strategy = nnet::latency;
-    static const unsigned n_zeros = 12;
+    static const unsigned n_zeros = 10;
     static const unsigned multiplier_limit = DIV_ROUNDUP(n_in * n_out, reuse_factor) - n_zeros / reuse_factor;
     typedef model_default_t accum_t;
     typedef bias26_t bias_t;
@@ -143,7 +143,7 @@ struct config26 : nnet::conv1d_config {
     static const unsigned dilation = 1;
     static const unsigned out_width = 16;
     static const unsigned reuse_factor = 1;
-    static const unsigned n_zeros = 12;
+    static const unsigned n_zeros = 10;
     static const unsigned multiplier_limit =
         DIV_ROUNDUP(kernel_size * n_chan * n_filt, reuse_factor) - n_zeros / reuse_factor;
     static const bool store_weights_in_bram = false;
@@ -258,8 +258,8 @@ struct config17 : nnet::dense_config {
     static const unsigned io_type = nnet::io_parallel;
     static const unsigned strategy = nnet::latency;
     static const unsigned reuse_factor = 1;
-    static const unsigned n_zeros = 13;
-    static const unsigned n_nonzeros = 87;
+    static const unsigned n_zeros = 10;
+    static const unsigned n_nonzeros = 90;
     static const unsigned multiplier_limit = DIV_ROUNDUP(n_in * n_out, reuse_factor) - n_zeros / reuse_factor;
     static const bool store_weights_in_bram = false;
     typedef model_default_t accum_t;
