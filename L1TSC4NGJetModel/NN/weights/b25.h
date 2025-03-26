@@ -1,18 +1,16 @@
 //Numpy array shape [10]
-//Min -0.062500000000
-//Max 0.812500000000
-//Number of zeros 0
+//Min -0.078125000000
+//Max 0.562500000000
+//Number of zeros 1
 
 #ifndef B25_H_
 #define B25_H_
 
-namespace L1TSC4NGJetModel_v1 {
-#ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
+#ifndef __SYNTHESIS__
 bias25_t b25[10];
 #else
-bias25_t b25[10] = {0.140625, 0.203125, 0.812500, 0.421875, 0.109375, -0.062500, 0.234375, 0.156250, 0.187500, 0.078125};
+bias25_t b25[10] = {0.156250, 0.296875, 0.265625, -0.078125, 0.171875, 0.000000, 0.171875, 0.015625, 0.562500, 0.031250};
 
 #endif
 
 #endif
-}
