@@ -8,6 +8,7 @@
 
 namespace L1TSC4NGJetModel_v1 {
 namespace L1TSC4NGJetModel_v1 {
+namespace L1TSC4NGJetModel_v1 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 weight6_t w6[200];
 #else
@@ -16,5 +17,6 @@ weight6_t w6[200] = {0.000000, 1.000000, 0.000000, 0.000000, -0.406250, 0.640625
 #endif
 
 #endif
+}
 }
 }

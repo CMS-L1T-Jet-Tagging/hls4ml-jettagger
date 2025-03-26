@@ -6,7 +6,8 @@
 #ifndef B23_H_
 #define B23_H_
 
-#ifndef __SYNTHESIS__
+namespace L1TSC4NGJetModel_v1 {
+#ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias23_t b23[1];
 #else
 bias23_t b23[1] = {0.101562500};
@@ -14,3 +15,4 @@ bias23_t b23[1] = {0.101562500};
 #endif
 
 #endif
+}

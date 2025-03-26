@@ -6,7 +6,8 @@
 #ifndef B17_H_
 #define B17_H_
 
-#ifndef __SYNTHESIS__
+namespace L1TSC4NGJetModel_v1 {
+#ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias17_t b17[10];
 #else
 bias17_t b17[10] = {-0.203125, 0.000000, 0.000000, -0.062500, 0.312500, 0.234375, 0.562500, 0.343750, 0.218750, 0.046875};
@@ -14,3 +15,4 @@ bias17_t b17[10] = {-0.203125, 0.000000, 0.000000, -0.062500, 0.312500, 0.234375
 #endif
 
 #endif
+}
