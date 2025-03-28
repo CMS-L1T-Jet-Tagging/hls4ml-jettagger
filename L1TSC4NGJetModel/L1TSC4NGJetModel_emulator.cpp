@@ -29,7 +29,7 @@ class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
 
         virtual void predict()
         {
-            JetTaggerNN(input_1, layer33_out,layer35_out);
+            L1TSC4NGJetModel(input_1, layer33_out,layer35_out);
             
         }
 
@@ -49,7 +49,7 @@ class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
 
 extern "C" hls4mlEmulator::Model* create_model()
 {
-    return new JetTaggerNN_emulator;
+    return new L1TSC4NGJetModel_emulator;
 }
 
 extern "C" void destroy_model(hls4mlEmulator::Model* m)
