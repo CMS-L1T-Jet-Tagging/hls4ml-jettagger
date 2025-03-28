@@ -1,4 +1,4 @@
-#include "NN/JetTaggerNN.h" //include of the top level of HLS model
+#include "NN/L1TSC4NGJetModel.h" //include of the top level of HLS model
 #include "emulator.h" //include of emulator modeling
 #include "NN/nnet_utils/nnet_common.h"
 #include <any>
@@ -9,7 +9,7 @@
 
 using namespace nnet;
 
-class JetTaggerNN_emulator : public hls4mlEmulator::Model{
+class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
     private:
         input_t input_1[N_INPUT_1_1*N_INPUT_2_1];
         pT_output_result_t layer33_out[N_LAYER_33]; // reg out
