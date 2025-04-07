@@ -7,7 +7,7 @@
 #include <cstddef>
 #include <cstdio>
 
-namespace L1TSC4NGJetModel_v1 {
+namespace hls4ml_L1TSC4NGJetModel_v0 {
 
 // hls-fpga-machine-learning insert numbers
 #define N_INPUT_1_1 16
@@ -90,4 +90,4 @@ typedef ap_fixed<18,8> pT_output_linear_table_t;
 
 
 #endif
-}
+} // namespace hls4ml_L1TSC4NGJetModel_v0

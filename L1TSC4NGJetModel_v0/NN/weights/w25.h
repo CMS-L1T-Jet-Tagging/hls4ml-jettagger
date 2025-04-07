@@ -6,7 +6,7 @@
 #ifndef W25_H_
 #define W25_H_
 
-namespace L1TSC4NGJetModel_v1 {
+namespace hls4ml_L1TSC4NGJetModel_v0 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 weight25_t w25[200];
 #else

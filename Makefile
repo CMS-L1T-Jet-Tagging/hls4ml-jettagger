@@ -8,7 +8,7 @@ HLS4ML_INCLUDE := $(EMULATOR_EXTRAS)/include/hls4ml
 INCLUDES := -I$(HLS4ML_INCLUDE) -I$(AP_TYPES) -I$(HLS_ROOT)/include
 #LD_FLAGS := -L$(EMULATOR_EXTRAS)/lib64 -
 LD_FLAGS := -L$(EMULATOR_EXTRAS)/lib64 -lemulator_interface
-ALL_VERSIONS:=L1TSC4NGJetModel/L1TSC4NGJetModel.so
+ALL_VERSIONS:=L1TSC4NGJetModel_v0/L1TSC4NGJetModel_v0.so
 
 
 .DEFAULT_GOAL := all
@@ -21,10 +21,10 @@ all: $(ALL_VERSIONS)
 install: all
 	@rm -rf $(PREFIX)/lib64
 	@mkdir -p $(PREFIX)/lib64
-	cp L1TSC4NGJetModel*.so $(PREFIX)/lib64
+	cp L1TSC4NGJetModel_*.so $(PREFIX)/lib64
 
 %.so:
 	$(MAKE) -C $(@D) INCLUDES="$(INCLUDES)" LD_FLAGS="$(LD_FLAGS)" CXXFLAGS="$(CXXFLAGS)"
 
 clean:
-	rm L1TSC4NGJetModel*.so
+	rm L1TSC4NGJetModel_*.so

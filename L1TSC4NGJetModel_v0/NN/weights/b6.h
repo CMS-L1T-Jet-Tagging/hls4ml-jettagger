@@ -6,9 +6,9 @@
 #ifndef B6_H_
 #define B6_H_
 
-namespace L1TSC4NGJetModel_v1 {
-namespace L1TSC4NGJetModel_v1 {
-namespace L1TSC4NGJetModel_v1 {
+namespace hls4ml_L1TSC4NGJetModel_v0 {
+namespace hls4ml_L1TSC4NGJetModel_v0 {
+namespace hls4ml_L1TSC4NGJetModel_v0 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias6_t b6[10];
 #else

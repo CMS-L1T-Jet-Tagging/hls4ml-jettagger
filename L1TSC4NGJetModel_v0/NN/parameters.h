@@ -38,7 +38,7 @@
 #include "weights/b23.h"
 
 
-namespace L1TSC4NGJetModel_v1 {
+namespace hls4ml_L1TSC4NGJetModel_v0 {
 // hls-fpga-machine-learning insert layer-config
 // norm_input
 struct config2 : nnet::batchnorm_config {
@@ -346,6 +346,6 @@ struct linear_config24 : nnet::activ_config {
 
 
 
-}
+} // namespace hls4ml_L1TSC4NGJetModel_v0
 
 #endif

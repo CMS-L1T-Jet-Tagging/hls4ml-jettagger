@@ -6,7 +6,7 @@
 #ifndef B25_H_
 #define B25_H_
 
-namespace L1TSC4NGJetModel_v1 {
+namespace hls4ml_L1TSC4NGJetModel_v0 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias25_t b25[10];
 #else

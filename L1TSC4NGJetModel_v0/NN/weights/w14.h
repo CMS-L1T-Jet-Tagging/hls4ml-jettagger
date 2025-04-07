@@ -6,7 +6,7 @@
 #ifndef W14_H_
 #define W14_H_
 
-namespace L1TSC4NGJetModel_v1 {
+namespace hls4ml_L1TSC4NGJetModel_v0 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 weight14_t w14[512];
 #else

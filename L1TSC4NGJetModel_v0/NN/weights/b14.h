@@ -6,7 +6,7 @@
 #ifndef B14_H_
 #define B14_H_
 
-namespace L1TSC4NGJetModel_v1 {
+namespace hls4ml_L1TSC4NGJetModel_v0 {
 #ifdef __HLS4ML_LOAD_TXT_WEIGHTS__
 bias14_t b14[16];
 #else
