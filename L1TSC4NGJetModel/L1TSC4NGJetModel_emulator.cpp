@@ -12,7 +12,7 @@ using namespace nnet;
 class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
     private:
         input_t input_1[N_INPUT_1_1*N_INPUT_2_1];
-        pT_output_result_t layer33_out[N_LAYER_33]; // reg out
+        layer33_t layer33_out[N_LAYER_33]; // reg out
         layer35_t layer35_out[N_LAYER_29]; // class out
     public:
 
@@ -35,7 +35,7 @@ class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
 
         virtual void read_result(std::any result)
         { 
-            std::pair<std::array<pT_output_result_t,N_LAYER_33>,std::array<layer35_t,N_LAYER_29>> *result_p = std::any_cast<std::pair<std::array<pT_output_result_t,N_LAYER_33>,std::array<layer35_t,N_LAYER_29>>*>(result);
+            std::pair<std::array<layer33_t,N_LAYER_33>,std::array<layer35_t,N_LAYER_29>> *result_p = std::any_cast<std::pair<std::array<layer33_t,N_LAYER_33>,std::array<layer35_t,N_LAYER_29>>*>(result);
             
             for (int i = 0; i < N_LAYER_33; ++i ){
                 result_p->second[i] = layer33_out[i];
