@@ -29,7 +29,7 @@ class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
 
         virtual void predict()
         {
-            L1TSC4NGJetModel(input_1, layer33_out,layer35_out);
+            L1TSC4NGJetModel(input_1, layer35_out,layer33_out);
             
         }
 
