@@ -7,13 +7,14 @@
 #include "ap_fixed.h"
 #include "ap_int.h"
 
-using namespace nnet;
+using namespace L1TSC4NGJetModel;
 
 class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
     private:
-        input_t input_1[N_INPUT_1_1*N_INPUT_2_1];
-        layer33_t layer33_out[N_LAYER_33]; // reg out
-        layer35_t layer35_out[N_LAYER_29]; // class out
+        L1TSC4NGJetModel_v1::input_t _input[N_INPUT_1_1 * N_INPUT_2_1];
+
+        layer35_t _layer35_out[N_LAYER_29]; // class out
+        layer33_t _layer33_out[N_LAYER_33]; // reg out
     public:
 
 
@@ -21,7 +22,7 @@ class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
         {
             input_t* input_p = std::any_cast<input_t*>(input);
             for(int i = 0; i < N_INPUT_1_1*N_INPUT_2_1; ++i){
-                input_1[i] = std::any_cast<input_t>(input_p[i]);
+                _input[i] = input_p[i];
             }
         }
 
@@ -29,7 +30,7 @@ class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
 
         virtual void predict()
         {
-            L1TSC4NGJetModel(input_1, layer35_out,layer33_out);
+            L1TSC4NGJetModel(_input, _layer35_out,_layer33_out);
             
         }
 
@@ -37,11 +38,12 @@ class L1TSC4NGJetModel_emulator : public hls4mlEmulator::Model{
         { 
             std::pair<std::array<layer33_t,N_LAYER_33>,std::array<layer35_t,N_LAYER_29>> *result_p = std::any_cast<std::pair<std::array<layer33_t,N_LAYER_33>,std::array<layer35_t,N_LAYER_29>>*>(result);
             
-            for (int i = 0; i < N_LAYER_33; ++i ){
-                result_p->second[i] = layer33_out[i];
-            }
+            
             for (int i = 0; i < N_LAYER_29; ++i ){
-                result_p->first[i] = layer35_out[i];  
+                result_p->second[i] = _layer35_out[i];  
+            }
+            for (int i = 0; i < N_LAYER_33; ++i ){
+                result_p->first[i] = _layer33_out[i];
             }
         }
 
